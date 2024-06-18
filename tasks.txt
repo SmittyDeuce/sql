@@ -1,0 +1,89 @@
+1. Database Development for a Music Library
+Objective:
+The aim of this assignment is to apply foundational knowledge of Data Definition Language (DDL) to create, modify, and manage a music library database. This involves establishing table structures, defining relationships, and ensuring data integrity for storing information about albums, artists, and genres.
+
+Task 1: SQL Table Creation
+
+Problem Statement: You need to create tables named Albums, Genre, and Artists that will store information about music. The Albums table should include columns for album ID, title, artist ID, genre ID, release year, and total tracks. You have to decide what data should be included in the Genre and Artist tables.
+Expected Outcome: Tables are successfully created through DDL statements.
+Task 2: SQL Alteration
+
+Problem Statement: After creating the Albums table, you realize that you need to add a column for the album's total duration in minutes.
+Expected Outcome: The Albums table is successfully modified to include a new column duration for the total duration of the album.
+Task 3: SQL Foreign Key Establishment
+
+Problem Statement: Establish a relationship between the Albums table and the Artists and Genre tables (assuming the Artists and Genre tables exist with an id column). Ensure that each album is linked to an existing artist and genre in the Artists and Genre table respectively.
+Expected Outcome: Foreign key constraints are successfully added to the Albums table ensuring referential integrity between the tables.
+2. Managing a Fitness Center Database
+Objective: This assignment is centered around Data Manipulation Language (DML) operations in a fitness center database. You will be working on inserting, updating, and deleting data related to gym members, trainers, and workout sessions, emphasizing the practical application of SQL DML commands in a real-world scenario.
+
+Members Table Structure:
+
+CREATE TABLE Members (
+    id INT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    age INT,
+);
+WorkoutSessions Table Structure:
+
+CREATE TABLE WorkoutSessions (
+    session_id INT PRIMARY KEY,
+    member_id INT,
+    session_date DATE,
+    session_time VARCHAR(50),
+    activity VARCHAR(255),
+    FOREIGN KEY (member_id) REFERENCES Members(id)
+);
+Task 1: SQL Data Insertion
+
+Problem Statement: Your task is to populate the Members and WorkoutSessions tables with relevant data. This will involve inserting records into both tables while ensuring data integrity and consistency.
+Expected Outcome: New member records are successfully added to the Members table with their respective details.
+Task 2: SQL Data Update
+
+Problem Statement: Update the workout session time for a specific member. Assume member 'Jane Doe' has changed her workout session from morning to evening.
+Expected Outcome: The WorkoutSessions table is successfully updated to reflect the new session time for Jane Doe.
+Task 3: SQL Data Deletion
+
+Problem Statement: Remove data of a member who has canceled their gym membership. Assume member 'John Smith' has canceled his membership.
+Expected Outcome: John Smith's record is successfully removed from the Members table, reflecting his cancellation of the gym membership.
+
+
+
+
+3. SQL Query Exploration in Employee Database
+Objective: This assignment is designed to enhance your skills in SQL Data Query Language (DQL), particularly using DISTINCT, COUNT, and BETWEEN clauses. You will work with an 'Employee' database that includes two tables: Employees and Departments.
+
+DDL and DML SQL Codes:
+
+DDL for Creating Tables:
+CREATE TABLE Departments (
+      department_id INT PRIMARY KEY,
+      department_name VARCHAR(100)
+    );
+2. DML for Populating Tables:
+
+CREATE TABLE Employees (
+      employee_id INT PRIMARY KEY,
+      name VARCHAR(100),
+      age INT,
+      department_id INT,
+      FOREIGN KEY (department_id) REFERENCES Departments(department_id)
+    );
+Task 1: SQL DISTINCT Usage
+
+Problem Statement: Identify the distinct departments in which employees work.
+
+Expected Outcome: A list of unique department names from the Employees table.
+
+Task 2: SQL COUNT Functionality
+
+Problem Statement: Count the total number of employees in each department. Investigate GROUP BY clause.
+
+Expected Outcome: A count of employees grouped by their department.
+
+Task 3: SQL BETWEEN Usage
+
+Problem Statement: Retrieve the details of employees whose ages fall between 25 and 30.
+
+Expected Outcome: A list of employees (including their names, ages, and department IDs) who are between the ages of 25 and 30.
+
